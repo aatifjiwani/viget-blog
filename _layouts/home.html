@@ -15,7 +15,7 @@
 <script type="application/ld+json">
 {"url":"http://localhost:4000/","headline":"{{ site.title }}","name":"{{ site.title }}","description":"{{ site.description }}","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ site.title }}" /></head>
+<link rel="stylesheet" href="../css/home.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ site.title }}" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">{{ site.title }}</a><nav class="site-nav">
@@ -28,7 +28,8 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/about/">About</a>
+      <a class="page-link" href="/all_blogs/">All Blogs</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -36,23 +37,44 @@
         <div class="home">
         <h2 class="post-list-heading">Posts from This Week:</h2>
         {% assign post_size = site.posts.size | modulo:7 %}
-        <ul class="post-list">
-        {% unless post_size == 0 %}
-            {% for i in (0..post_size) %}
-                <li><span class="post-meta">{{ site.posts[i].date | date: "%B %-d %Y" }}</span>
+        <table>
+            <tr>
+           {% unless post_size == 0 %}
+            {% assign end_range = post_size | minus:1 %}
+                {% include populate.html start=0 last=end_range %}
+                
+            <!--{% for i in (0..end_range) %}
+                <td><span class="post-meta">{{ site.posts[i].date | date: "%B %-d %Y" }}</span>
                 <h5>
                   <a class="post-link" href="{{ site.posts[i].url }}">
                     {{ site.posts[i].title }}
                   </a>
-                </h5></li>
-            {% endfor %}
-        {% else %}
-            <h3>Logic to be continued..</h3>
-        {% endunless %}
-        
+                </h5></td>
+            {% endfor %}-->
+            {% else %}
+                {% include populate.html start=0 last=6 %}
+            {% endunless %}
+            </tr>
+        </table>
             
-                </ul>
-          </div>
+        <h2 class="post-list-heading">Posts from Last Week:</h2>
+        <table>
+            <tr>
+            {% if post_size == site.posts.size %}
+                <p>Nothing here!</p>
+            {% elsif post_size > 0 %}
+                {% assign end_range = post_size | plus:6 %}
+                    {% include populate.html start=post_size last=end_range %}
+            {% else %}
+                {% include populate.html start=7 last=13 %}
+            {% endif %}
+            </tr>
+        </table>
+        <br><br> 
+        <a class="page-link" href="/all_blogs/">View All Blogs</a>
+            
+                
+    </div>
 
       </div>
     </main>

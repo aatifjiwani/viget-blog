@@ -2,7 +2,7 @@
 layout: post
 title:  "My Second Day at Viget!"
 date:   2018-06-05
-categories: first
+category: first
 ---
 
 Hey! This is my second day at Viget and it's going really well so far. 

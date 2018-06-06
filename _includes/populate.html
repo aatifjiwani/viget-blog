@@ -1,0 +1,10 @@
+{% for i in (include.start..include.last) %}
+<td>
+        <span class="post-meta">{{ site.posts[i].date | date: "%B %-d %Y" }}</span>
+    <h5>
+      <a class="post-link" href="{{ site.posts[i].url }}">
+        {{ site.posts[i].title }}
+      </a>
+    </h5>
+</td>
+{% endfor %}

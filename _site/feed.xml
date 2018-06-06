@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-06T14:15:01-06:00</updated><id>http://localhost:4000/</id><title type="html">Jiwani | Viget Blog 2018</title><subtitle>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </subtitle><entry><title type="html">My Second Day at Viget!</title><link href="http://localhost:4000/first/2018/06/05/my-second-day.html" rel="alternate" type="text/html" title="My Second Day at Viget!" /><published>2018-06-05T00:00:00-06:00</published><updated>2018-06-05T00:00:00-06:00</updated><id>http://localhost:4000/first/2018/06/05/my-second-day</id><content type="html" xml:base="http://localhost:4000/first/2018/06/05/my-second-day.html">&lt;p&gt;Hey! This is my second day at Viget and it’s going really well so far. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-06T16:33:49-06:00</updated><id>http://localhost:4000/</id><title type="html">Jiwani | Viget Blog 2018</title><subtitle>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </subtitle><entry><title type="html">I figured it out</title><link href="http://localhost:4000/first/2018/06/06/i-figured-it-out.html" rel="alternate" type="text/html" title="I figured it out" /><published>2018-06-06T00:00:00-06:00</published><updated>2018-06-06T00:00:00-06:00</updated><id>http://localhost:4000/first/2018/06/06/i-figured-it-out</id><content type="html" xml:base="http://localhost:4000/first/2018/06/06/i-figured-it-out.html">&lt;p&gt;Well, this is my third day at Viget and everything is going pretty well. Today I had a meeting at 8:30 AM for the Intro to Business Dev and that sucked. Not the content or the people in the meeting, just the fact that I had to pull myself out of bed at 6:00 AM to get to the meeting on time. I don’t really like waking up early because I’m a night owl and not a morning riser but sometimes you gotta do what’s expected of you. It’s all good.&lt;/p&gt;
+
+&lt;p&gt;After playing around with Jekyll for a little while, I finally have the entire framework down. I know how to override the default layouts given by Jekyll and I figured out how the templating works. Jekyll uses Liquid templating which sounds dumb and horrible and the mathematical operations are absolutely wack. Instead of writing&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;% highlight ruby %&amp;gt;
+12 % 7 #5
+&amp;lt;% endhighlight %&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;you have to write&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;% highlight ruby %&amp;gt;
+12 | modulo:7 #5
+&amp;lt;% endhighlight %&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Isn’t that dumb?&lt;/p&gt;
+
+&lt;p&gt;Welp, that’s it for this post. Cya tomorrow.&lt;/p&gt;</content><author><name></name></author><category term="first" /><summary type="html">Well, this is my third day at Viget and everything is going pretty well. Today I had a meeting at 8:30 AM for the Intro to Business Dev and that sucked. Not the content or the people in the meeting, just the fact that I had to pull myself out of bed at 6:00 AM to get to the meeting on time. I don’t really like waking up early because I’m a night owl and not a morning riser but sometimes you gotta do what’s expected of you. It’s all good.</summary></entry><entry><title type="html">My Second Day at Viget!</title><link href="http://localhost:4000/first/2018/06/05/my-second-day.html" rel="alternate" type="text/html" title="My Second Day at Viget!" /><published>2018-06-05T00:00:00-06:00</published><updated>2018-06-05T00:00:00-06:00</updated><id>http://localhost:4000/first/2018/06/05/my-second-day</id><content type="html" xml:base="http://localhost:4000/first/2018/06/05/my-second-day.html">&lt;p&gt;Hey! This is my second day at Viget and it’s going really well so far. 
 Today, I had a lot of meetings but it was quite fun. It was nice to be able to 
 immerse myself in what a real-life office scenario would look like.&lt;/p&gt;
 
@@ -8,4 +24,4 @@ I think I got the hang of it. It’s kinda funky and not like an web framework t
 
 &lt;p&gt;Right now, my blog looks pretty bland and I hope to be able to work with Peyton on making the design better
 with his help in CSS styling. I would if I could but front-end is a pain in my butt and I really don’t want to tinker
-with it for hours to make sure all my formatting is correct.&lt;/p&gt;</content><author><name></name></author><summary type="html">Hey! This is my second day at Viget and it’s going really well so far. Today, I had a lot of meetings but it was quite fun. It was nice to be able to immerse myself in what a real-life office scenario would look like.</summary></entry></feed>
+with it for hours to make sure all my formatting is correct.&lt;/p&gt;</content><author><name></name></author><category term="first" /><summary type="html">Hey! This is my second day at Viget and it’s going really well so far. Today, I had a lot of meetings but it was quite fun. It was nice to be able to immerse myself in what a real-life office scenario would look like.</summary></entry></feed>
