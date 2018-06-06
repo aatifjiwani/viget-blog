@@ -9,15 +9,16 @@ Well, this is my third day at Viget and everything is going pretty well. Today I
 
 After playing around with Jekyll for a little while, I finally have the entire framework down. I know how to override the default layouts given by Jekyll and I figured out how the templating works. Jekyll uses Liquid templating which sounds dumb and horrible and the mathematical operations are absolutely wack. Instead of writing 
 
-<% highlight ruby %>
+
+{% highlight ruby %}
 12 % 7 #5
-<% endhighlight %>
+{% endhighlight %}
 
 you have to write
 
-<% highlight ruby %>
+{% highlight ruby %}
 12 | modulo:7 #5
-<% endhighlight %>
+{% endhighlight %}
 
 Isn't that dumb? 
 
