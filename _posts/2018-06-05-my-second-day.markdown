@@ -3,6 +3,7 @@ layout: post
 title:  "My Second Day at Viget!"
 date:   2018-06-05
 category: first
+comments: true
 ---
 
 Hey! This is my second day at Viget and it's going really well so far. 
@@ -16,3 +17,5 @@ I think I got the hang of it. It's kinda funky and not like an web framework tha
 Right now, my blog looks pretty bland and I hope to be able to work with Peyton on making the design better
 with his help in CSS styling. I would if I could but front-end is a pain in my butt and I really don't want to tinker
 with it for hours to make sure all my formatting is correct. 
+
+{% include comments.html %}

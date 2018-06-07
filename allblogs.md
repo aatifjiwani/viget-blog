@@ -3,6 +3,7 @@ layout: page
 title: Blog Sitemap
 permalink: /all_blogs/
 ---
+
 {% include sitemaphead.html %}
 
 {% for category in site.categories %}
