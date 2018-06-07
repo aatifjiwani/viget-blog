@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "I figured it out"
+title: I figured it out.
 date:   2018-06-06
 category: first
 comments: true
@@ -25,4 +25,3 @@ Isn't that dumb?
 
 Welp, that's it for this post. Cya tomorrow. 
 
-{% include comments.html %}

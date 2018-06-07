@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My Second Day at Viget!"
+title:  My Second Day at Viget!
 date:   2018-06-05
 category: first
 comments: true
@@ -18,4 +18,3 @@ Right now, my blog looks pretty bland and I hope to be able to work with Peyton 
 with his help in CSS styling. I would if I could but front-end is a pain in my butt and I really don't want to tinker
 with it for hours to make sure all my formatting is correct. 
 
-{% include comments.html %}
