@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Blog Sitemap | Jiwani | Viget Blog 2018</title>
+<title> | Jiwani | Viget Blog 2018</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Blog Sitemap" />
+<meta property="og:title" content="Started A New Project!" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
 <meta property="og:description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
@@ -13,12 +13,9 @@
 <meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="Jiwani | Viget Blog 2018" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000//all_blogs//","headline":"Blog Sitemap","name":"Jiwani | Viget Blog 2018","description":"This is a blog created for my 2018 Viget Internship as their Rails Developer intern. ","@type":"WebSite","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000//","headline":"","name":"Jiwani | Viget Blog 2018","description":"This is a blog created for my 2018 Viget Internship as their Rails Developer intern. ","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/flexbox.css">
-<link rel="stylesheet" href="../css/hero.css">
-<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jiwani | Viget Blog 2018" /></head>
+<link rel="stylesheet" href="/css/home.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jiwani | Viget Blog 2018" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper nav-color"><a class="site-title" rel="author" href="/">Jiwani | Viget Blog 2018</a><nav class="site-nav">
@@ -39,10 +36,7 @@
         <article class="post">
 
   <header class="post-header">
-    
-    
-      <h1 class="post-title">Blog Sitemap</h1>
-    
+    <h1 class="post-title"> Started A New Project!</h1>
   </header>
             
 <!--
@@ -69,87 +63,53 @@ font-color: off-white or some thing
 
   <div class="post-content">
     <p>
-        <style type="text/css">
-table {
-  margin-bottom: 30px;
-  width: auto;
-  text-align: left;
-  color: #3f3f3f;
-  border: none;
-}
-  
-table th, table td {
-    padding: 0; 
-}
-    
-table th {
-    background-color: #f0f0f0;
-}
-     
-table td {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-     
-table tr td:first-child {
-    padding-left: 0;
-}
+        
+        <p>Today I finished my blog in its entirety (if that’s spelled correctly). I’ve added a photo of myself to the about page to add some more pizzaz.</p>
 
-table tr td:last-child {
-    padding-right: 0;
-}
+<p>Now, I have a new project. Yay!! I get to build a recreation of <a href="http://news.ycombinator.com"> Hacker News</a> which is pretty sweet. I started to work on deploying the app and getting the preliminary design of the home page finished.</p>
 
-</style>
+<p>Whilst doing so, I learnt a couple things. First, Heroku is a PAIN IN THE ASS!!!!!! Just trying to deploy the app on Heroku took like an hour or so because I was getting so many errors. There is just so many things you have to configure before your app is working successfully on Heroku.</p>
 
-<div data-category="first">
-    <h1>First Week <span style="font-size: 14px; color: gray;">June 5 - June 8 2018</span></h1>
+<p>Next, I learnt more things about Ruby on Rails. I figured out (with the help of Eli) that each HTML page is actually a template that is passed into the application.html.erb file. I also learned that in the application controller, you can write:</p>
 
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">some_method</span>
+    <span class="o">...</span>
+<span class="k">end</span>
 
-    <ul class="article-list numitems-4">
-    
-        <li class="article-list__item">
-            <span class="post-meta">June 8 2018</span>
-                <h5>
-                  <a class="post-link" href="/first/2018/06/08/finished-blog.html">
-                    Started A New Project!
-                  </a>
-                </h5>
-        </li>
-    
-        <li class="article-list__item">
-            <span class="post-meta">June 7 2018</span>
-                <h5>
-                  <a class="post-link" href="/first/2018/06/07/damn-ir-looks-good.html">
-                    My Blog Looks SWEET!
-                  </a>
-                </h5>
-        </li>
-    
-        <li class="article-list__item">
-            <span class="post-meta">June 6 2018</span>
-                <h5>
-                  <a class="post-link" href="/first/2018/06/06/i-figured-it-out.html">
-                    I figured it out.
-                  </a>
-                </h5>
-        </li>
-    
-        <li class="article-list__item">
-            <span class="post-meta">June 5 2018</span>
-                <h5>
-                  <a class="post-link" href="/first/2018/06/05/my-second-day.html">
-                    My Second Day at Viget!
-                  </a>
-                </h5>
-        </li>
-    
-    </ul>
-</div>
+<span class="n">helper_method</span> <span class="ss">:some_method</span></code></pre></figure>
+
+<p>and you can use the given method inside your view. That’s so cool!!</p>
+
+<p>Tomorrow, I am going to work on creating a model for the posts and allowing visitors to be able to create and view a list of the most recent posts.</p>
+
+<p>See ya tomorrow!!</p>
 
     <p>
       
 
   </div>
+            
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+    this.page.url = aatifjiwani.github.io;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = i-figured-it-out; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://aatifjiwani.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+
+<script id="dsq-count-scr" src="//EXAMPLE.disqus.com/count.js" async></script>
 
 </article>
 
