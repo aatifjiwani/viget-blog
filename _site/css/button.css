@@ -1,0 +1,51 @@
+.lastWeek {
+	background-color: #F66A33;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #F66A33;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:13px 39px;
+	text-decoration:none;
+}
+.lastWeek:hover {
+	background-color:#fc8151;
+}
+.lastWeek:active {
+	position:relative;
+	top:1px;
+}
+
+.nextWeek {
+	background-color: #0096B7;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #0096B7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:13px 13px;
+	text-decoration:none;
+}
+.nextWeek:hover {
+	background-color:#00a1c4;
+}
+.nextWeek:active {
+	position:relative;
+	top:1px;
+}
+
+.buttons td {
+    padding: 0px 5px;
+}
+
+.buttons td:first-child {
+    padding-left: 0;
+}

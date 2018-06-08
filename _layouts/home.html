@@ -10,12 +10,93 @@
 <meta name="description" content="{{ site.description }}" />
 <meta property="og:description" content="{{ site.title }}" />
 <link rel="canonical" href="http://localhost:4000/" />
+
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="{{ site.title }}" />
 <script type="application/ld+json">
 {"url":"http://localhost:4000/","headline":"{{ site.title }}","name":"{{ site.title }}","description":"{{ site.description }}","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="../css/home.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ site.title }}" /></head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/button.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/flexbox.css">
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ site.title }}" />
+
+<script type="text/javascript">
+    var categories = [];
+    var el;
+    var counter;
+    
+    /**
+    * @source https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
+    */
+    
+    function fade(element, callback) {
+        var op = 1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op <= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+                callback()
+            }
+            
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op -= op * 0.1;
+        }, 20);
+    }
+    
+    function unfade(element, callback) {
+        var op = 0.1;  // initial opacity
+        element.style.display = 'block';
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op += op * 0.1;
+        }, 20);
+    }
+    
+    function lastWeek() {
+        if (counter > 0) {
+            counter = counter - 1;
+            
+            
+            fade(el, function() {
+                
+                el = document.querySelector('div[data-category="'+ categories[counter] +'"]');
+                unfade(el)
+            });
+            
+            
+//            setTimeout(function(){ unfade(el); }, 500);
+            
+        }
+    }
+    
+    function nextWeek() {
+        if (counter < categories.length - 1) {
+            counter = counter + 1;            
+            fade(el, function() {
+                
+                el = document.querySelector('div[data-category="'+ categories[counter] +'"]');
+                unfade(el)
+            });
+        }
+    }
+    
+    window.onload = function(){
+        console.log('stuff');
+        counter = categories.length - 1;
+        el = document.querySelector('div[data-category="'+ categories[counter] +'"]');
+        unfade(el);
+    };
+    console.log('lol');
+</script>    
+
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">{{ site.title }}</a><nav class="site-nav">
@@ -35,10 +116,45 @@
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div class="home">
-        <h2 class="post-list-heading">Post from this week:
+            {% for category in site.categories %}
+            {% assign first_date = category[1].first.date | date: "%B %-d %Y" %}
+            {% assign last_date = category[1].last.date | date: "%B %-d" %}
             
-        </h2>
-        {% assign post_size = site.posts.size | modulo:7 %}
+            <script type="text/javascript">
+                categories.push("{{ category[0] }}");
+            </script>
+            
+            <div data-category="{{ category[0] }}" style="opacity: 0; display: none;">
+                <h3 class="post-title" style="font-size: 38px;">{{ category[0] | capitalize }} Week Posts <span style="font-size: 18px; color: gray;">{{ last_date }} - {{ first_date }}</span></h3>
+
+
+                <ul class="article-list numitems-{{ category[1].size }}">
+                    {% for post in category[1] %}
+                    <li class="article-list__item" >
+                        <span class="post-meta">{{ post.date | date: "%B %-d %Y" }}</span>
+                        <h5>
+                          <a class="post-link" href="{{ post.url }}">
+                            {{ post.title }}
+                          </a>
+                        </h5>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+        
+        <table class="buttons">
+            <tr>
+                <td>
+                    <a href="#" onclick="lastWeek()" id="lW" class="lastWeek"><i class="fas fa-arrow-left"></i> Last Week</a>
+                </td>
+                <td>
+                    <a href="#" id="nW" onclick="nextWeek()" class="nextWeek">Next Week <i class="fas fa-arrow-right"></i></a>
+                </td>
+            </tr>    
+        </table>
+            
+        <!-- {% assign post_size = site.posts.size | modulo:7 %}
         <table>
             <tr>
            {% unless post_size == 0 %}
@@ -52,7 +168,7 @@
                     {{ site.posts[i].title }}
                   </a>
                 </h5></td>
-            {% endfor %}-->
+            {% endfor %} #(->)
             {% else %}
                 {% include populate.html start=0 last=6 %}
             {% endunless %}
@@ -71,7 +187,7 @@
                 {% include populate.html start=7 last=13 %}
             {% endif %}
             </tr>
-        </table>
+        </table> -->
         <br><br> 
         <a class="post-link" href="/all_blogs/" style="font-size: 16px;">View All Blogs</a>
             
