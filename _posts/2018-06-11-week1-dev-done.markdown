@@ -6,7 +6,7 @@ category: second
 comments: true
 ---
 
-Ahhh, today was pretty relaxed compared to last week. I didn't have a crap-ton of meetings to go to which was nice. 
+Ahh, today was pretty relaxed compared to last week. I didn't have a crap-ton of meetings to go to which was nice. 
 Today, I learned quite a bit more about Ruby on Rails and Heroku. When you migrate your database locally, apparently heroku does
 not detect the changes. So you need to tell heroku to migrate the db on their server or something which is weird. 
 
