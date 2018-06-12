@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title> | Jiwani | Viget Blog 2018</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Made It Even Better!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
+<meta property="og:description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
+<link rel="canonical" href="http://localhost:4000/about/" />
+<meta property="og:url" content="http://localhost:4000/about/" />
+<meta property="og:site_name" content="Jiwani | Viget Blog 2018" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000//","headline":"","name":"Jiwani | Viget Blog 2018","description":"This is a blog created for my 2018 Viget Internship as their Rails Developer intern. ","@type":"WebSite","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/css/home.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jiwani | Viget Blog 2018" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper nav-color"><a class="site-title" rel="author" href="/">Jiwani | Viget Blog 2018</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/all_blogs/">All Blogs</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"> Made It Even Better!</h1>
+  </header>
+            
+<!--
+
+Hero image (if size is large enough) 
+unspalsh.com (other high quality images)
+
+1920x1080
+set css to width: 100vw
+height: vh (be cautious)
+
+50px padding on both top and bottom
+letter-spacing: 0.01em
+box-shadow: pos_x pos_y blur color
+
+box-shadow: 1px -3px 15px grey;
+#0096B7 - viget blue
+
+#F66A33 - viget orange
+
+font-color: off-white or some thing
+
+-->
+
+  <div class="post-content">
+    <p>
+        
+        <p>Yesterday after I posted the blog for June 11, I started experimenting with Active Storage for RoR. When I first started to dig into it all, it was hella confusing. I didn’t even know where to start. But thankfully I pushed through and this is what I did:</p>
+
+<ul>
+    <li>
+        <p>Created a free Google Cloud account</p>
+    </li>
+    <li>
+        <p>Created a project and a storage bucket for Haxxor News</p>
+    </li>
+    <li>
+        <p>Installed the Active Storage tables needed for Ruby on Rails to know what is currently being stored and where</p>
+    </li>
+    <li>
+        <p>Configured storage.yml to say that GCS is an usable storage location</p>
+    </li>
+    <li>
+        <p>Added "has_attached" to the Articles model to allow attachments to every article (Just one image)</p>
+    </li>
+    <li>
+        <p>Launched the app locally and prayed that it worked....it did!</p>
+    </li>
+</ul>
+
+<p>So that was really fun. Another cool thing that I figured out how to do today was add a formatting toolbar to the textarea element when creating a new article. For your reference and my future reference for what I did, I first added a script tag in the head to import the .js code:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--  @source https://cdn.ckeditor.com/#ckeditor5 
+Add code to application.html.erb --&gt;</span>   
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p>And then, when needed, I had to add a script that replaced the textarea element with their CKEditor5 replacement to add the formatting toolbar:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The form is generated from rail's form_for form generator  --&gt;</span>
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">form</span><span class="err">.</span><span class="na">text_area</span> <span class="na">:body</span><span class="err">,</span> <span class="na">class:</span> <span class="err">'</span><span class="na">textarea-field</span><span class="err">',</span> <span class="na">id:</span> <span class="err">'</span><span class="na">editor</span><span class="err">'</span> <span class="err">%</span><span class="nt">&gt;</span>
+<span class="c">&lt;!--  @source https://cdn.ckeditor.com/#ckeditor5 
+Add code wherever the formatting toolbar is desired --&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">ClassicEditor</span>
+    <span class="p">.</span><span class="nx">create</span><span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">'#editor'</span> <span class="p">),</span> <span class="p">{</span>
+        <span class="na">toolbar</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'heading'</span><span class="p">,</span> <span class="s1">'|'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">,</span> <span class="s1">'italic'</span><span class="p">,</span> <span class="s1">'bulletedList'</span><span class="p">,</span> <span class="s1">'numberedList'</span><span class="p">,</span> <span class="s1">'link'</span><span class="p">,</span> <span class="s1">'blockQuote'</span> <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="p">)</span> <span class="p">.</span><span class="k">catch</span><span class="p">(</span> <span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">error</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p>And that’s it! Now you’ll be able to see a formatting toolbar on your textarea element. But something to note is that if you have specific styling for that textarea without the formatting toolbar, you will have to move that styling to apply to the new, replaced textarea element if that makes sense.</p>
+
+<p>On another note, I started doing testing for my Haxxor News application which is kinda neat. The capybara gem is flippin genius and I want to shake the hand of whoever created it.</p>
+
+<p>After all that’s been finished, I’ve been working on making sure that every feature I’ve added looks good or works properly. Now that I am close to finishing the current feature of active storage keeping, I am a little confused on whether or not I should move onto user authentication without finishing all the pull requests I’ve generated. I honestly don’t want to go through the hassle of rebasing or cherry-picking but if it has to be done, it has to be done.</p>
+
+<p>That’s all for today! I know this was long so if you made it to this point, congrats!</p>
+
+    <p>
+      
+
+  </div>
+            
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+    this.page.url = aatifjiwani.github.io;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = i-figured-it-out; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://aatifjiwani.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+
+<script id="dsq-count-scr" src="//EXAMPLE.disqus.com/count.js" async></script>
+
+</article>
+
+</div>
+</main>
+    
+</body>
+    
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Email me at <a class="u-email" href="mailto:aatif.jiwani@viget.com">aatif.jiwani@viget.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aatifjiwani"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aatifjiwani</span></a></li><li><a href="https://www.twitter.com/AwwTif"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">AwwTif</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</html>
