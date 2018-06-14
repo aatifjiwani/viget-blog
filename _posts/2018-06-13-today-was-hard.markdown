@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Today I Struggled...
-date:   2018-06-12
+date:   2018-06-13
 category: second
 comments: true
 ---
