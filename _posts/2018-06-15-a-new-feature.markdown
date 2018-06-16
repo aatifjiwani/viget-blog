@@ -30,7 +30,11 @@ config.action_mailer.smtp_settings = {
 :address              => "smtp.gmail.com",
 :port                 => 587,
 :user_name            => "nflkiddo.productions@gmail.com",
+<<<<<<< HEAD
 :password             => Rails.application.credentials.dig(:mail_pass),
+=======
+:password             => "xqtuktmwhlqjejlw",
+>>>>>>> 84aeea85d82ee79c585508b76ffe20d96f81e074
 :authentication       => "plain",
 :enable_starttls_auto => true
 }
