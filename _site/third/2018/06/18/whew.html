@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title> | Jiwani | Viget Blog 2018</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="A New Feature" />
+<meta property="og:title" content="Whew, I did it." />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
 <meta property="og:description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
@@ -36,7 +36,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> A New Feature</h1>
+    <h1 class="post-title"> Whew, I did it.</h1>
   </header>
             
 <!--
@@ -64,38 +64,27 @@ font-color: off-white or some thing
   <div class="post-content">
     <p>
         
-        <p>As the second week of my Viget internship comes to a close, I’ve been able to successfully add a pretty sweet feature that seems mediocre to other people: resetting a password.</p>
+        <p>Dang, it’s my third week already here at Viget. Time really flies by.</p>
 
-<p>In this process, I learned that it’s important to stay away from creating custom routes and instead create a separate controller to handle CRUD actions, even if it doesn’t have a model associated with it. I had to create a PasswordReset controller which had the new, create, edit, and update actions to handle a user wanting to reset their password.</p>
+<p>Today, I did a lot in terms of fixing some stuff in my pull requests (Thanks Eli and David!)</p>
 
-<p>Also, Rails has a nifty thing that allows you to regenerate password tokens so someone doesn’t purposely change someone’s password by guessing the proper token. Simply make sure that you add:</p>
+<p>For my first pull request, which was the branch that managed password resets, I fixed a lot of security issues. I learned that some people aren’t stupid and could inspect my html and see some hidden fields. For some context, I had the user id stored in a hidden field on my html so I could reference it when I wanted to update the user’s password. Now, I fixed it to be where I stored the user in a session variable and then destroyed it once the user has successfully reset their password. Then, there was an issue where I had the password token for each user be unique and if I regenerated the password token, the app could crash because the regenerated password token matched another user. I fixed this issue to make it so the password token is NOT unique but the reset password url contains the user’s email for extra validation. Finally, I fixed an issue where I put my gmail account’s unique app password in my commit (which can be apparently used to hack into my gmail, whoops) but now the password is stored in the encrypted credentials file.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_secure_token</span> <span class="ss">:&lt;</span><span class="n">whatever</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">column</span><span class="o">-</span><span class="n">is</span><span class="o">-</span><span class="n">called</span><span class="o">&gt;</span></code></pre></figure>
+<p>For my second and final PR, which was user-post interaction, I fixed some small thingss. These fixes are mainly efficiency fixes and being able to handle future complexity. I made some logical changes where some methods are stored in different areas and accessed differently.</p>
 
-<p>into the proper model.</p>
+<p>After all that was done, I had to push everything to Heroku. This may seem like a non-daunting task but I didn’t push anything to Heroku since I created my article model. So my app didn’t have any user functionality yet. When I pushed my changes to Heroku, a couple things happened. My heroku master branch was apparently a commit ahead of my local branch so I had to</p>
 
-<p>Also, I learned how to properly configure Active Mailer. There’s actually a separate kinda controller that handle’s all the mailing functions. Also, for your and my reference, again, this is how a sample config should look if you’re using gmail to send your email.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">force</span> <span class="n">heroku</span> <span class="n">master</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">raise_delivery_errors</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">perform_deliveries</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">delivery_method</span> <span class="o">=</span> <span class="ss">:smtp</span>
-<span class="c1"># SMTP settings for gmail</span>
-<span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">smtp_settings</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ss">:address</span>              <span class="o">=&gt;</span> <span class="s2">"smtp.gmail.com"</span><span class="p">,</span>
-<span class="ss">:port</span>                 <span class="o">=&gt;</span> <span class="mi">587</span><span class="p">,</span>
-<span class="ss">:user_name</span>            <span class="o">=&gt;</span> <span class="s2">"nflkiddo.productions@gmail.com"</span><span class="p">,</span>
-<span class="ss">:password</span>             <span class="o">=&gt;</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">credentials</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="ss">:mail_pass</span><span class="p">),</span>
-<span class="ss">:authentication</span>       <span class="o">=&gt;</span> <span class="s2">"plain"</span><span class="p">,</span>
-<span class="ss">:enable_starttls_auto</span> <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="p">}</span>
+<p>Then, there was apparently a syntax error in my javascript file but oddly enough, the error log didn’t really specifty that. It instead said:</p>
 
-<span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">perform_caching</span> <span class="o">=</span> <span class="kp">false</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Uglifier</span><span class="o">::</span><span class="no">Error</span><span class="p">:</span> <span class="no">Unexpected</span> <span class="ss">token: </span><span class="n">punc</span> <span class="p">(()</span><span class="o">.</span> <span class="no">To</span> <span class="n">use</span> <span class="no">ES6</span> <span class="n">syntax</span><span class="p">,</span> <span class="n">harmony</span> <span class="n">mode</span> <span class="n">must</span> <span class="n">be</span> <span class="n">enabled</span> <span class="n">with</span> <span class="no">Uglifier</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:harmony</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span></code></pre></figure>
 
-<span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">default_url_options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">host: </span><span class="s2">"localhost:3000"</span> <span class="p">}</span></code></pre></figure>
+<p>Lol it’s kinda funny that the class name is Uglifier. That’s hilarious lmfao. But that error apparently means that there’s something wrong with my javascript, specifically the javascript that implemented the formatting toolbar. Thankfully, I figured it out and fixed the issue.</p>
 
-<p>My password isn’t actually that jumbled mess but instead an app password. If you want to hack into my email, by all means go ahead. I haven’t used that email in such a long time and only still exists as kinda a burner email where bots or people can send unwanted emails there.</p>
+<p>With a miracle, my app compiled correctly and everything works! I added a article model spec because I had a silly error where I didn’t account for a nil user when checking who the parent of the article was.</p>
 
-<p>Otherwise, that’s it for today! I’ve successfully written feature specs for resetting a password and it all passes! Ahhhh that’s relieving.</p>
+<p>With my remaining time for the day, I am going to add a comment controller as well as a model. I will prolly continue with this tomorrow as well.</p>
 
     <p>
       
