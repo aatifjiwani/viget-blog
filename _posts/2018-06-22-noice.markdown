@@ -1,0 +1,38 @@
+---
+layout: post
+title:  Noice
+date:   2018-06-22
+category: third
+comments: true
+---
+
+As my third week comes to a close, I just wanna say hell yeah. I was able to implement the voting scheme on both articles and comments seamlessly because I think I've got the polymorphism concept down. I didn't have to bug Eli with any questions and I solved everything myself. YEEEEAHHHHHH BOOIIIIIII!!!!!
+
+One thing I also did today was help Peyton get the rails app running. Boy, oh boy we ran into so many problems. 
+The first one was that apparently he didn't have permissions to view or create a public key to install command-line tools. 
+However, we searched it up and found that he could edit his permissions using
+
+{% highlight ruby %}
+sudo chown -R <username> ~/.gnupg
+    
+#View permissions using:
+ls -l ~/.gnupg
+{% endhighlight %}
+
+So after that, Peyton could finally install Ruby Version manager. The next problem that we the postgresql databases weren't created so that was easily fixable using:
+
+{% highlight ruby %}
+rake db:create
+{% endhighlight %}
+
+Finally, the last problem we had was that he was getting a `PG:ConnectionBad` error whenver he was trying to access `localhost:3000`. 
+In order to fix that problem, go into your directory and type `rm postmaster.pid`
+and then type:
+
+{% highlight ruby %}
+brew services restart postgresql
+{% endhighlight %}
+
+This retarts the Postgres server I think. After doing that, Peyton finally could see the Rails welcome page!
+
+Next week, I am going to do the bonus specs that Eli listed in BaseCamp because I finished all the basic ones a week early!

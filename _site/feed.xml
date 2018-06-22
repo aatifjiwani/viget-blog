@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-22T09:03:48-06:00</updated><id>http://localhost:4000/</id><title type="html">Jiwani | Viget Blog 2018</title><subtitle>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </subtitle><entry><title type="html">You Can Vote!</title><link href="http://localhost:4000/third/2018/06/21/now-you-can-vote.html" rel="alternate" type="text/html" title="You Can Vote!" /><published>2018-06-21T00:00:00-06:00</published><updated>2018-06-21T00:00:00-06:00</updated><id>http://localhost:4000/third/2018/06/21/now-you-can-vote</id><content type="html" xml:base="http://localhost:4000/third/2018/06/21/now-you-can-vote.html">&lt;p&gt;Ahh, today was a much better day. I didn’t struggle as much as I did yesterday but I still was challenged as I was expecting. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-22T15:53:20-06:00</updated><id>http://localhost:4000/</id><title type="html">Jiwani | Viget Blog 2018</title><subtitle>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </subtitle><entry><title type="html">Noice</title><link href="http://localhost:4000/third/2018/06/22/noice.html" rel="alternate" type="text/html" title="Noice" /><published>2018-06-22T00:00:00-06:00</published><updated>2018-06-22T00:00:00-06:00</updated><id>http://localhost:4000/third/2018/06/22/noice</id><content type="html" xml:base="http://localhost:4000/third/2018/06/22/noice.html">&lt;p&gt;As my third week comes to a close, I just wanna say hell yeah. I was able to implement the voting scheme on both articles and comments seamlessly because I think I’ve got the polymorphism concept down. I didn’t have to bug Eli with any questions and I solved everything myself. YEEEEAHHHHHH BOOIIIIIII!!!!!&lt;/p&gt;
+
+&lt;p&gt;One thing I also did today was help Peyton get the rails app running. Boy, oh boy we ran into so many problems. 
+The first one was that apparently he didn’t have permissions to view or create a public key to install command-line tools. 
+However, we searched it up and found that he could edit his permissions using&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.gnupg
+    
+#View permissions using:
+ls -l ~/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gnupg&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So after that, Peyton could finally install Ruby Version manager. The next problem that we the postgresql databases weren’t created so that was easily fixable using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:create&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Finally, the last problem we had was that he was getting a &lt;code class=&quot;highlighter-rouge&quot;&gt;PG:ConnectionBad&lt;/code&gt; error whenver he was trying to access &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;. 
+In order to fix that problem, go into your directory and type &lt;code class=&quot;highlighter-rouge&quot;&gt;rm postmaster.pid&lt;/code&gt;
+and then type:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;brew&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;services&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restart&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postgresql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This retarts the Postgres server I think. After doing that, Peyton finally could see the Rails welcome page!&lt;/p&gt;
+
+&lt;p&gt;Next week, I am going to do the bonus specs that Eli listed in BaseCamp because I finished all the basic ones a week early!&lt;/p&gt;</content><author><name></name></author><category term="third" /><summary type="html">As my third week comes to a close, I just wanna say hell yeah. I was able to implement the voting scheme on both articles and comments seamlessly because I think I’ve got the polymorphism concept down. I didn’t have to bug Eli with any questions and I solved everything myself. YEEEEAHHHHHH BOOIIIIIII!!!!!</summary></entry><entry><title type="html">You Can Vote!</title><link href="http://localhost:4000/third/2018/06/21/now-you-can-vote.html" rel="alternate" type="text/html" title="You Can Vote!" /><published>2018-06-21T00:00:00-06:00</published><updated>2018-06-21T00:00:00-06:00</updated><id>http://localhost:4000/third/2018/06/21/now-you-can-vote</id><content type="html" xml:base="http://localhost:4000/third/2018/06/21/now-you-can-vote.html">&lt;p&gt;Ahh, today was a much better day. I didn’t struggle as much as I did yesterday but I still was challenged as I was expecting. 
 Today, I worked on implementing the voting scheme on just the articles. In order to do that, I had to learn about ajax and how you can assign
 background tasks, essentially, within your app. At first it was pretty hard because I was just trying to learn from the internet. But turns out, I didn’t have the right resources. All the things I was looking at rendered a javascript file after a remote link is clicked but that javascript never did anything. 
 Nothing was working!!!!&lt;/p&gt;
@@ -186,22 +209,4 @@ not detect the changes. So you need to tell heroku to migrate the db on their se
 
 &lt;p&gt;In other news, I taught Eli how to play Fortnite lol:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/imgs/IMG_0318.jpg&quot; alt=&quot;Eli playing fortnite&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="second" /><summary type="html">Ahh, today was pretty relaxed compared to last week. I didn’t have a crap-ton of meetings to go to which was nice. Today, I learned quite a bit more about Ruby on Rails and Heroku. When you migrate your database locally, apparently heroku does not detect the changes. So you need to tell heroku to migrate the db on their server or something which is weird.</summary></entry><entry><title type="html">Started A New Project!</title><link href="http://localhost:4000/first/2018/06/08/finished-blog.html" rel="alternate" type="text/html" title="Started A New Project!" /><published>2018-06-08T00:00:00-06:00</published><updated>2018-06-08T00:00:00-06:00</updated><id>http://localhost:4000/first/2018/06/08/finished-blog</id><content type="html" xml:base="http://localhost:4000/first/2018/06/08/finished-blog.html">&lt;p&gt;Today I finished my blog in its entirety (if that’s spelled correctly). I’ve added a photo of myself to the about page to add some more pizzaz.&lt;/p&gt;
-
-&lt;p&gt;Now, I have a new project. Yay!! I get to build a recreation of &lt;a href=&quot;http://news.ycombinator.com&quot;&gt; Hacker News&lt;/a&gt; which is pretty sweet. I started to work on deploying the app and getting the preliminary design of the home page finished.&lt;/p&gt;
-
-&lt;p&gt;Whilst doing so, I learnt a couple things. First, Heroku is a PAIN IN THE ASS!!!!!! Just trying to deploy the app on Heroku took like an hour or so because I was getting so many errors. There is just so many things you have to configure before your app is working successfully on Heroku.&lt;/p&gt;
-
-&lt;p&gt;Next, I learnt more things about Ruby on Rails. I figured out (with the help of Eli) that each HTML page is actually a template that is passed into the application.html.erb file. I also learned that in the application controller, you can write:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;some_method&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;helper_method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:some_method&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and you can use the given method inside your view. That’s so cool!!&lt;/p&gt;
-
-&lt;p&gt;Tomorrow, I am going to work on creating a model for the posts and allowing visitors to be able to create and view a list of the most recent posts.&lt;/p&gt;
-
-&lt;p&gt;See ya tomorrow!!&lt;/p&gt;</content><author><name></name></author><category term="first" /><summary type="html">Today I finished my blog in its entirety (if that’s spelled correctly). I’ve added a photo of myself to the about page to add some more pizzaz.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/imgs/IMG_0318.jpg&quot; alt=&quot;Eli playing fortnite&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="second" /><summary type="html">Ahh, today was pretty relaxed compared to last week. I didn’t have a crap-ton of meetings to go to which was nice. Today, I learned quite a bit more about Ruby on Rails and Heroku. When you migrate your database locally, apparently heroku does not detect the changes. So you need to tell heroku to migrate the db on their server or something which is weird.</summary></entry></feed>
