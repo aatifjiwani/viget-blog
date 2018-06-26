@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title> | Jiwani | Viget Blog 2018</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Bonus Spec" />
+<meta property="og:title" content="Donneeee" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
 <meta property="og:description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
@@ -36,7 +36,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> Bonus Spec</h1>
+    <h1 class="post-title"> Donneeee</h1>
   </header>
             
 <!--
@@ -64,11 +64,15 @@ font-color: off-white or some thing
   <div class="post-content">
     <p>
         
-        <p>Today was a pretty sweet day! I got a lot of feedback on my PR which was really good because it made me think about the various problems or security vulnerabilities there may be. I also learned that it is good to put logic in templates and use querying stuff in helper methods so it reduces the chance of someone finding out how the app functions (without looking at the GitHub lol).</p>
+        <p>Today was another pretty dope day. I finished addressing the comments on my filter article PR and I finished adding in a profile page for users. I ran into a couple silly problems because I accidentally made the suggested changes for the PR on my <code class="highlighter-rouge">user-profile</code> branch which was a no-no. So I had to mentally figure out which modified files should be committed to the <code class="highlighter-rouge">filter-article</code> or <code class="highlighter-rouge">user-profile</code> branches.</p>
 
-<p>Then, today I also worked on getting the home page to filter articles based on how high its been rated within the past year, month, day, or all-time. Originally, I was just going to use ajax in order to re-filter the current list of articles asynchronously but Eli gave me a better, more logical, and ultimately easier way of doing it. I just simply send a GET request to the index action of the Article controller with a parameter of how I want to filter the articles. Then, I just check that the parameter is there and perform some actions on the Vote model.</p>
+<p>In terms of the user profile page, I had a lot of fun with it. I was able to style it pretty darn well and I added a sweet animation that allows you to see the different articles you’ve posted as well as the articles you’ve voted on. I did run into an issue where if I voted on an article in the “Your Articles” tab, the vote count of that article would not update in the “Your Votes” tab. So I had to completely rethink how I updated those elements with javascript. Luckily, I learned that you can assemble an array of HTML elements with the same class name using:</p>
 
-<p>I also learned about scope which is how I perform the databse queries to get the highest rated articles of a given time period. It took a lot of thinking honestly and I still don’t believe I have the best way of doing it. But, so far everything works and I’m about done with doing the testing.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementByClassName</span><span class="p">(</span><span class="s2">"class-name"</span><span class="p">);</span></code></pre></figure>
+
+<p>I used this method to be able to scan for the vote-count elements for the same article, hidden or not, and update the respective vote count. Then, I was able to easily write a user-profile spec and everything passes!!!</p>
+
+<p>Now, I kinda finished everything that Eli gave me to do and so I am going to ask him for some ideas of what else I should implement.</p>
 
 <p>That’s it for today!</p>
 

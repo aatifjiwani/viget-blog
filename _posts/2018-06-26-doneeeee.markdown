@@ -1,0 +1,21 @@
+---
+layout: post
+title:  Donneeee
+date:   2018-06-26
+category: fourth
+comments: true
+---
+
+Today was another pretty dope day. I finished addressing the comments on my filter article PR and I finished adding in a profile page for users. I ran into a couple silly problems because I accidentally made the suggested changes for the PR on my `user-profile` branch which was a no-no. So I had to mentally figure out which modified files should be committed to the `filter-article` or `user-profile` branches. 
+
+In terms of the user profile page, I had a lot of fun with it. I was able to style it pretty darn well and I added a sweet animation that allows you to see the different articles you've posted as well as the articles you've voted on. I did run into an issue where if I voted on an article in the "Your Articles" tab, the vote count of that article would not update in the "Your Votes" tab. So I had to completely rethink how I updated those elements with javascript. Luckily, I learned that you can assemble an array of HTML elements with the same class name using:
+
+{% highlight javascript %}
+document.getElementByClassName("class-name");
+{% endhighlight %}
+
+I used this method to be able to scan for the vote-count elements for the same article, hidden or not, and update the respective vote count. Then, I was able to easily write a user-profile spec and everything passes!!!
+
+Now, I kinda finished everything that Eli gave me to do and so I am going to ask him for some ideas of what else I should implement. 
+
+That's it for today!
