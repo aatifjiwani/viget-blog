@@ -1,0 +1,13 @@
+---
+layout: post
+title:  OAuth is One of its Kind
+date:   2018-06-28
+category: fourth
+comments: true
+---
+
+Boy oh boy, have I had a wild day. Today, I tried getting a user to be able to sign in and create an account with Facebook. I came across a load of problems that kinda confused me. The first one was that when I create a user from Facebook, I can't really give them a password because it can cause confusion and pose a security risk. Therefore, the `password_digest` column in the user model is `nil` for that user. This causes problems because the user model validates the password, for presence and confirmation, automatically with the tag `has_secure_token`. So then, I had to figure out how to bypass all those validations and I did that by setting `has_secure_password validations:false` and then manually adding my own validations to run under certain conditions. This caused another problem because if the `password_digest` is set to `nil`, BCrypt throws an error saying it can't read the password because it's blank. This forced me to think about an alternate solution where I had to create a new model called `OAuthUsers` that properly stored which users created used external services. So, when a FB user tries to sign in manually, I have to check whether or not their username is stored in the `OAuthUsers` model and alert them that they need to sign in via their provided service. 
+
+Besides OAuth, I made some changes to the group project and tried to rebase my feature branch with Peyton's old feature branch. In order to do this, I needed to rebase my branch onto Peyton's branch but this caused so much confusion. When I rebased, fixed the merge, and tried to push the changes to the respective branch, I would get an error saying that I need to `git pull..` before I could do anything. When I did that, it would give me more merge errors, which I fixed. From there, honestly I don't know what happened but I rebased accidentally multiple times because I thought the rebase wasn't working at all. So I ended up creating like 10-12 false commits which isn't good because it makes it harder to find the right commit with the right changes. So tomorrow or before end of day today, I need to ask Eli for help on how to properly rebase again so I don't screw up in the future. 
+
+Tomorrow, I'm going to add OAuth feature specs for FB and hopefully that goes smoothly. 

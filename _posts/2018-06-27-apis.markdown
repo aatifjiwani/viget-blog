@@ -1,0 +1,17 @@
+---
+layout: post
+title:  APIs
+date:   2018-06-27
+category: fourth
+comments: true
+---
+
+So today after I finished addressing the comments on my PR, I started working on interacting with APIs. The only one that I really wanted to include was a geolocation API so that when users sign up or create a post, they can choose to have a location attached to it. From there, the API gets the location from the IP address where the request was from and it'll attach the location to the model. 
+
+I also interacted with the Google Map Static API where I can get an image of the location from Google Maps when given a set of lat/lon. This was pretty easy and honestly, I didn't run into many problems I couldn't solve on my own. 
+
+However, that all changes with OAuth. To take my app to the next step, I started to implement OAuth2 so users could, for now, sign in with Facebook instead of natively through the app. This was a serious pain because there were so many problems I encountered. The first one was that the gem itself had a bug that incorrectly raised an error because it couldn't find FB's access token, but it was clearly there. The solution to that problem was simply updating the gem but I don't know why it wasn't up to date when I first installed it. 
+
+Then, in order to get more information about the Facebook user, you have to fricken make a request to FB and prove to them you aren't doing any malicious things to expose the user. I haven't done this yet because it'll take too much time and that's time that I don't have now that the group intern project is starting to pertain to me and my department. 
+
+Tomorrow, I'm just going to continue working on OAuth and hopefully it works. 
