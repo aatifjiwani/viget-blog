@@ -1,0 +1,24 @@
+---
+layout: post
+title:  It Begins
+date:   2018-07-02
+category: fifth
+comments: true
+---
+
+If you noticed I skipped Friday's post of last week, I'm sorry. I got super busy and I just didn't have time to write a post by the end of the day. 
+However. today I finished Haxxor News!! All the PRs got approved and it is officially deployed at [haxxornews-vgt.herokuapp.com]. 
+
+After I got that finished, I started making ground on the intern group project. I was able to figure out Devise and authenticate a user with their modules. It's kinda weird how the gem works. It literally creates all the controllers for you which is pretty cool but can be pretty confusing. If you want to do custom stuff to the controller, you have to extend it from the super controller and override the methods. It also generates all the views for you so you don't have to bother creating the forms for user registration or sign in. Right now, the forms are unstyled and the app looks pretty odd right now but I'm going to wait till Peyton can get working on styling all that stuff before I can really say anything. 
+
+Once completing that, I started working on all the models that the app might need at first glance. I created the Poll, Vote, Comment, and Follow models as well as implemented the respective validations and associations. Also, I created, or am in the process of creating, the specs for each model. While I was creating the model spec for Follows, Eli taught me something pretty sweet. If you want to find the polls that the user is following, you can write an association like
+
+{% highlight ruby %}
+has_many :followed_polls, through: :follows, source: :poll
+{% endhighlight %}
+
+Then, you can execute user.followed_polls and get a list of all the polls that the user follows. Isn't that fricken sick!!!!!!!!!
+
+I know that association is really going to come in handy when we want to display all the polls a user follows. 
+
+Well, that's it for today and I am going to continue working on this tomorrow. Bye!
