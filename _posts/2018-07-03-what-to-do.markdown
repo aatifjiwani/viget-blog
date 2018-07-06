@@ -1,0 +1,17 @@
+---
+layout: post
+title:  What Do I Do Now?
+date:   2018-07-03
+category: fifth
+comments: true
+---
+
+So today, I finished addressing the comments on the backend structure PR for This or That and now I am wondering, what do I do now?
+
+I've been able to occupy myself for quite a while today because I had a Boulder office lunch with the CEO and I had a couple meetings here and there. But besides that, I have no clue what I do now. 
+
+In order to solve that problem, I did two things. One, I talked to Prayash about mobile dev/React to see how I can start looking at mobile development as an option for the rest of my internship. Of course I won't be ditching Rails at all because I still have to use it in order to create the group project. However, I don't really want to always do Rails and I've always had an interest in mobile development. So maybe that can be an option. 
+
+Second, I started looking into how Chrome extensions are made. I thought it was always pretty cool that you could create extensions that can interact with the webpage you are currently on. So therefore, I started to take a peek at the documentation and got started on my first ever Chrome extension. However, learning how to do so is really confusing. The Google dev documentation on how to build extensions is pretty confusing and hard to follow. I got the basics down like having a manifest where you declare what all you're going to use and what permissions you need, but I still don't know how to make things work together. So after a little bit of tinkering before I have to leave, I was able to get the extension working to where it changed the color of the background on the page you're currently on to orange. Isn't that cool! Syke it's super boring right now but maybe I'll experiment with it later. 
+
+Tomorrow if July 4th and Thursday is my mom's birthday so I won't be working until Friday. See ya'll then!
