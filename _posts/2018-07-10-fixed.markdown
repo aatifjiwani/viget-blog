@@ -1,0 +1,13 @@
+---
+layout: post
+title:  Yay I Fixed It
+date:   2018-07-10
+category: sixth
+comments: true
+---
+
+So if you read yesterday's blog post, I said I encountered a problem with the method `setValuesWithKeys(dict: Dictionary)`. Today, I finally found the solution to that problem and it was by simply adding `@objc` in front of the attributes you wanted assigned by the method. This is needed because in Swift 3, I guess every object was kinda treated like an Objective-C object and that it was able to be encoded with values from another source. However, Swift 4 removed that option and now you have to manually tell Swift that I want this object treated as if it was in Objective-C. I don't understand why there are those differences but oh well. 
+
+Once I fixed that problem, I pretty much finished up the AppStore tutorial. Everything pretty much does look like the actual App Store except for a few key things. Now, I am going to work on the chat app using Firebase. Hopefully when I finish that by the end of this week, I have enough experience to start developing on my own. 
+
+Today was pretty normal so nothing else I need to say. See ya tomorrow.
