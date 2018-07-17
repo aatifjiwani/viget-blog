@@ -1,0 +1,28 @@
+---
+layout: post
+title:  Group Project Day
+date:   2018-07-16
+category: seventh
+comments: true
+---
+
+Today was very unsatisfying in some ways. I came in this morning thinking I would be able to finish handling the Create Poll form in a couple hours but it ended up taking the ENTIRE DAY!!!! I didn't really mind working on the group project all day because in the end, that's pretty much my job here as an intern and I love to code. But I lowkey was looking forward to be able to continue with the Chat App tutorial so I could finally start working on making the mobile app for the group project. 
+
+One thing that I did learn when working on this specific feature is to attach a status code to your JSON response back to the browser. For instance, if a user didn't put the information properly, I responded back with a:
+
+{% highlight ruby %}
+render json: {
+    "status": "error"
+    ... other stuff
+}, status: :unprocessable_entity
+{% endhighlight %}
+
+I think that's a 522 status error code and you can replace that status line with any error type you want. This then allows me to bind an ajax error handler to the specific element like:
+
+{% highlight javascript %}
+$("poll-form").on("ajax:error", function(error, data, status, xhr) {
+    ... do whatever here
+});
+{% endhighlight %}
+
+So yeah that's it. Otherwise, the PR is up and ready to be revieeeewwweeeeeeeeeeeeddddddddddddddddd. See ya tomorrow.
