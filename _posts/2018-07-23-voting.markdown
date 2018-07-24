@@ -1,0 +1,33 @@
+---
+layout: post
+title:  Voting and APIs
+date:   2018-07-23
+category: eighth
+comments: true
+---
+
+Ahh today was pretty cool because I learned some things that I think are very crucial to app development. 
+First, I worked on getting the Sign in modal to popup in the iOS app for the group project. Honestly that was pretty easy because it just consisted of copying the code from the Login view and refactoring it in order to fit the design. I didn't really have much trouble with this. 
+
+Then, I worked on the voting scheme for the web app. This was kinda hard because there were so many things to think about. I had to think about "What if the user is signed in? If not?" and "What if the user has already voted on this poll?". These questions definitely came into play a lot because I had to return paths to the `update` action in the Vote controller if the user voted on a poll for the first time. I got the functionality working in about a couple hours and now I just have to wait for Peyton to be able to finish his part of taking the response and changing the frontend based on that. 
+
+Finally, I worked on getting the API setup for the web app. In order for the mobile app to work properly, I need to communicate with a REST API from my app. Therefore, I learned a couple things. 
+
+In order to make a `api/` route, I had to do:
+
+{% highlight ruby %}
+  namespace :api do
+    resource :polls
+    #other stuff
+  end
+{% endhighlight %}
+
+This would create a route like `BASE_DOMAIN/api/OTHER_CONTROLLER`. Then, in order to setup the API controllers, I had to label the class name as:
+
+{% highlight ruby %}
+class Api::PollsController < Api::ApiController
+  #do stuff here
+end
+{% endhighlight %}
+
+That's pretty cool! That's pretty much all I learned and did today. Tomorrow, I'm going to develop the APIs further so I can integrate it within the iOS app. 
