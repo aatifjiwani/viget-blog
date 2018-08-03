@@ -1,0 +1,15 @@
+---
+layout: post
+title:  IT'S DONE!
+date:   2018-08-03
+category: ninth
+comments: true
+---
+
+WE DID IT!!!!!!! Hoorrayyy!!!!!! This Or That has officially launched as part of the intern group project and I can proudly say, I've never been this hyped for an app launch. It's really satisfying to see a whole 8 weeks worth of work coming together and allowing users to be able to have the world decide for them. 
+
+In the morning when I came into work, things weren't going how I planned. There were quite a few problems and I didn't really know what the heck was going on! The app on Erica's computer wasn't loading, sometimes the pictures wouldn't load, and the visitor voting feature wasn't working properly in terms of the frontend. I first worked on the visitor voting bug and I realized that I forgot a `.option` to the end of a conditional and that messed the whole thing up lmao. To address the others, I realized maybe it was a problem with the Javascript somewhere. I came to this conclusion because my experience with weird bugs while working on this project has been largely attributed to errors in JS. Peyton just recently added a massive 16,000 line JS file that made a wavy effect on the header. I wasn't going to filter through 16,000 lines of code to find an error so we all agreed to remove this file and maybe add it on a later date. Thankfully, this fixed everything and our group project was officially finished! The presentation went really well and we started getting Viget people to go onto the site and interact with it. 
+
+After FLF, I realized that it might be smart to add pagination because if the app loads all polls at once everytime, then the performance can become super slow if there are a crap ton of polls. I thought this would be pretty hard but I actually understood how to do everything! All I had to do was add the `will_paginate` gem, add the pagination method to the ActiveRecord Association, and it would return a certain list of polls based on which page the user is on. Then, I had to add scripts to check if the user is at the bottom of the page in order to load the next "page" of polls. This was all pretty simple and I only ran into a few minor problems. One thing I realized after finishing this feature is that all the eventListeners and Voting JS code didn't work properly on the newly generated polls. I realized that this was because my JS code adds event listeners to polls when the user first gets onto the site. Therefore, I had to learn about adding custom events and add custom event listeners to the elements I want it on. After a little session of JS refactoring, I got everything to work and now it's on a PR. Hopefully, I'll implement it by the end of the day!
+
+Next week is my last week as an intern here at Viget and I'm pretty bummed that I'm almost done. I really enjoyed working on this project and it has been an insane experience. I'm so proud of myself and the other interns I worked with. Without them, this app would not be as good as it is. 
