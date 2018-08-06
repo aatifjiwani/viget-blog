@@ -1,0 +1,27 @@
+---
+layout: post
+title:  My Last Week @ Viget
+date:   2018-08-06
+category: tenth
+comments: true
+---
+
+Today is the day I've dreaded since I started this internship: The Monday of the last week of being a Viget intern. I don't want to reflect back on my entire internship just yet but I do want to let ya'll know that the feeling I have right now sucks. It sucks knowing that I only have 5 more days to enjoy the office and the people in it. Also, I have to leave for California literally 12 hours after my internship ends which blows. 
+
+All the mushy stuff aside, I fixed a quick bug in the morning for This Or That. Apparently, whenever a picture is uploaded to a poll, the text associated with it was HTML encoded. So whenever someone wanted to write an apostrophe, it would be encoded to something like `&36;` which is not what we want. So I looked at the code and the option label was wrapped around in single quotes. The solution to this was wrapping the label in double quotes and also attaching a `.html_safe` to the end of the Embedded Ruby code. 
+
+After fixing that, it was time to work on the iOS project. This was a lot of fun and to be honest, I made some pretty big strides. First, I worked on the individual Poll cell so that if there was an image attached to it, the layout would be different than if the Poll had no images. The first step to doing this is adding more JSON attributes to the Poll. I learned that you can override the method by doing 
+
+{% highlight ruby %}
+def as_json(opts={})
+  super.merge(...)
+end
+{% endhighlight %}
+
+This was helpful because I could attach the full image URL to the JSON even if it isn't attached. 
+
+After being able to do that, I worked on being able to filter the polls based on the ones you've created and the ones you follow. This was as simple as attaching a filter parameter to the User API endpoint and returning the polls based on the query. 
+
+Finally, I worked on the log out functionality. This was as simple as creating a new view, and setting the `UserDefaults.standard.isLoggedIn` variable to false. Then, I had to update the view accordingly. 
+
+This is pretty much all I did today. See ya tomorrow!!!!
