@@ -1,0 +1,17 @@
+---
+layout: post
+title:  More iOS Dev
+date:   2018-08-07
+category: tenth
+comments: true
+---
+
+Today was pretty uneventful. Durham had their TTT today so we didn't have a Dev Biweekly Meeting, just standup instead. I didn't really have any other meetings besides going out to lunch with the Boulder dev team so I just worked on the iOS app all day. 
+
+Because I've been working on it all day, I made some massive strides. Today, I was able to create the single poll view and parse all the data I needed to it. I do have to admit, it was exhausting creating and positioning literally all of the elements that are on that view. Also, I ran into a challenege where comment cells in the collection view had to have their height dynamically change based on the length of the body text. At first, I didn't really know where to go. I looked it up and not many people had this concern. However, I did find a partially related post that gave me an idea of how to go about this challenge. So what I did was that instead of giving the collectionView delegate a specific height, I called a function that created a mock Comment Cell. From this, I ran `sizeThatFits(size: CGSize)` on the body of the text and returned the height that was given. This worked out really well and my solution works perfectly. 
+
+Other than this, I implemented following functionality as well as the commenting functionality. There isn't much to say here because all it consists of is making API calls and updating the UI.
+
+Finally, I worked on the Popular/Most Recent bar at the top of the collectionView. This was confusing at first because the bar is itself inside a cell so I had to rewrite the logic for the collectionView delegate methods so that it would show the tabular bar when the user is on the Feed page and not the other pages. I didn't get done with all of it but I was able to make the bar appear properly and created and positioned the initial elements. 
+
+That's it for today! Cya tomorrow.

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title> | Jiwani | Viget Blog 2018</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Animations!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
+<meta property="og:description" content="This is a blog created for my 2018 Viget Internship as their Rails Developer intern. " />
+<link rel="canonical" href="http://localhost:4000/about/" />
+<meta property="og:url" content="http://localhost:4000/about/" />
+<meta property="og:site_name" content="Jiwani | Viget Blog 2018" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000//","headline":"","name":"Jiwani | Viget Blog 2018","description":"This is a blog created for my 2018 Viget Internship as their Rails Developer intern. ","@type":"WebSite","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/css/home.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jiwani | Viget Blog 2018" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper nav-color"><a class="site-title" rel="author" href="/">Jiwani | Viget Blog 2018</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/all_blogs/">All Blogs</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"> Animations!</h1>
+  </header>
+            
+<!--
+
+Hero image (if size is large enough) 
+unspalsh.com (other high quality images)
+
+1920x1080
+set css to width: 100vw
+height: vh (be cautious)
+
+50px padding on both top and bottom
+letter-spacing: 0.01em
+box-shadow: pos_x pos_y blur color
+
+box-shadow: 1px -3px 15px grey;
+#0096B7 - viget blue
+
+#F66A33 - viget orange
+
+font-color: off-white or some thing
+
+-->
+
+  <div class="post-content">
+    <p>
+        
+        <p>Today was a pretty normal day. Not many meetings and just time to work on the iOS app. Yesterday, I left off in the middle of creating the popular/recent tab. In order to animate it, I had to figure out how the heck I can change the position, corner radius, and the border color all in one shot. After doing some research, I learned about <code class="highlighter-rouge">CABasicAnimation</code>s. “CA” stands for Core Animations and this class is awesome. All you have to do is:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">let</span> <span class="n">animation</span> <span class="o">=</span> <span class="n">CABasicAnimation</span><span class="p">(</span><span class="n">keyPath</span><span class="o">:</span> <span class="s">"borderColor"</span><span class="p">)</span>
+<span class="n">animation</span><span class="p">.</span><span class="n">fromValue</span> <span class="o">=</span> <span class="n">UIColor</span><span class="p">.</span><span class="n">blue</span>
+<span class="n">animation</span><span class="p">.</span><span class="n">toValue</span> <span class="o">=</span> <span class="n">UIColor</span><span class="p">.</span><span class="n">red</span>
+<span class="n">animation</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">animation</span><span class="p">.</span><span class="n">repeat</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">view</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span> <span class="n">forKey</span><span class="o">:</span> <span class="s">"borderColor"</span><span class="p">)</span></code></pre></figure>
+
+<p>The line where you add the animation is actually when the animation executes. That’s pretty cool!
+Also, I was working on the loading poll cell because I don’t want the entire Poll View to be blank while the app is gathering data. I wanted to mimic the Facebook Post loading design and how it shimmers. After doing some more research, I found out that the animation is done by repeatedly moving an angled gradient across the view. That’s such a simple thing to do to produce such a cool animation.</p>
+
+<p>After implementing that, it was time to start writing Unit Tests. Unit Tests for iOS are pretty confusing and the structure and syntax are kinda weird. Prayash gave me some resources on how to write Unit tests and at first, I was pretty confused. To be honest, I’m still a little confused because I haven’t really written verbose Unit tests. All that I can test right now are my models (Poll, User, Comment) because my app is pretty much all API based. I don’t get anything from a stored database and I don’t have any hard data. So really, the trustworthiness of my app comes down to UITests which, at first glance, looks horribly confusing and I’m going to need a lot of help with that.</p>
+
+<p>Hopefully I’ll learn how to write basic UI tests before I leave in a couple days.</p>
+
+<p>Tomorrow, it’s all voting time. I have a crap ton of meetings but hopefully I can finish making the Voting API and get started on implementing the feature within the app. Cya!</p>
+
+    <p>
+      
+
+  </div>
+            
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+    this.page.url = aatifjiwani.github.io;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = i-figured-it-out; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://aatifjiwani.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+
+<script id="dsq-count-scr" src="//EXAMPLE.disqus.com/count.js" async></script>
+
+</article>
+
+</div>
+</main>
+    
+</body>
+    
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Email me at <a class="u-email" href="mailto:aatif.jiwani@viget.com">aatif.jiwani@viget.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aatifjiwani"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aatifjiwani</span></a></li><li><a href="https://www.twitter.com/AwwTif"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">AwwTif</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog created for my 2018 Viget Internship as their Rails Developer intern. </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</html>
